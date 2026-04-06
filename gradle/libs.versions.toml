@@ -13,6 +13,7 @@ composeBom = "2024.09.00"
 material3 = "1.4.0"
 navigationCompose = "2.9.7"
 navigationComposeVersion = "2.9.7"
+browser = "1.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,8 +36,8 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 material3 = { module = "androidx.compose.material3:material3" }
+androidx-browser = { group = "androidx.browser", name = "browser", version.ref = "browser" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-

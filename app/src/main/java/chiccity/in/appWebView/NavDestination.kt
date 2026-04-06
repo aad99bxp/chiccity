@@ -1,24 +1,12 @@
 package chiccity.`in`.appWebView
-
 import kotlinx.serialization.Serializable
 
 @Serializable
 sealed class NavDestination {
-
-    @Serializable
-    data object Auth : NavDestination()   // ✅ ADDED
-
-    @Serializable
-    data object Home : NavDestination()
-
-    @Serializable
-    data object Cart : NavDestination()
-
-    @Serializable
-    data object Orders : NavDestination()
-
-    @Serializable
-    data object Account : NavDestination()
+    @Serializable data object Home : NavDestination()
+    @Serializable data object Cart : NavDestination()
+    @Serializable data object Orders : NavDestination()
+    @Serializable data object Account : NavDestination()
 }
 
 object NavUrls {
@@ -32,6 +20,5 @@ object NavUrls {
         is NavDestination.Cart -> CART
         is NavDestination.Orders -> ORDERS
         is NavDestination.Account -> ACCOUNT
-        is NavDestination.Auth -> ACCOUNT
     }
 }

@@ -6,18 +6,14 @@ plugins {
 
 android {
     namespace = "chiccity.in"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "chiccity.in"
         minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 35
+        versionCode = 3
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -62,7 +58,5 @@ dependencies {
     implementation(libs.androidx.navigation.compose.v297alpha09)
     implementation(libs.kotlinx.serialization.json)
     implementation("androidx.compose.material:material-icons-extended")
-
-
-
+    implementation(libs.androidx.browser)
 }
