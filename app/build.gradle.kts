@@ -6,14 +6,14 @@ plugins {
 
 android {
     namespace = "chiccity.in"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "chiccity.in"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 3
-        versionName = "1.3"
+        targetSdk = 36
+        versionCode =6
+        versionName = "1.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.browser)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -58,5 +59,4 @@ dependencies {
     implementation(libs.androidx.navigation.compose.v297alpha09)
     implementation(libs.kotlinx.serialization.json)
     implementation("androidx.compose.material:material-icons-extended")
-    implementation(libs.androidx.browser)
 }

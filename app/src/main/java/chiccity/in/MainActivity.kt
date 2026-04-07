@@ -8,6 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import chiccity.`in`.appWebView.MainScreen
+import chiccity.`in`.appWebView.WebViewManager
 import chiccity.`in`.ui.theme.Chiccity2Theme
 
 class MainActivity : ComponentActivity() {
@@ -15,6 +16,9 @@ class MainActivity : ComponentActivity() {
         val splashScreen = installSplashScreen()
         var keepSplash = true
         super.onCreate(savedInstanceState)
+
+        // Initialize WebViewManager to preload and cache the homepage
+        WebViewManager.initialize(this)
 
         splashScreen.setKeepOnScreenCondition {
             keepSplash
@@ -24,9 +28,6 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             Chiccity2Theme {
-//                Surface(modifier = Modifier.fillMaxSize().safeDrawingPadding()) {
-//                    MyWebView("https://chiccity.in/my-account/")
-//                }
                 MainScreen()
             }
         }

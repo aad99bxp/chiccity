@@ -3,6 +3,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 sealed class NavDestination {
+    @Serializable data object Auth : NavDestination()
     @Serializable data object Home : NavDestination()
     @Serializable data object Cart : NavDestination()
     @Serializable data object Orders : NavDestination()
@@ -16,6 +17,7 @@ object NavUrls {
     const val ACCOUNT = "https://chiccity.in/my-account/"
 
     fun urlForDestination(dest: NavDestination): String = when (dest) {
+        is NavDestination.Auth -> ACCOUNT
         is NavDestination.Home -> HOME
         is NavDestination.Cart -> CART
         is NavDestination.Orders -> ORDERS

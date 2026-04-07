@@ -25,11 +25,10 @@ object WebViewManager {
                     domStorageEnabled = true
                     databaseEnabled = true
                     
-                    // Caching strategy
+                    // Caching strategy: Use cache when available to avoid reloads
                     cacheMode = WebSettings.LOAD_DEFAULT
                     
-                    // Hardware Acceleration is enabled by default in Android 3.0+
-                    // but we can ensure it's prioritized for the WebView's layer
+                    // Hardware Acceleration
                     setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
                     // Performance optimizations
@@ -55,6 +54,9 @@ object WebViewManager {
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 )
+
+                // Preload the homepage to cache it
+                loadUrl(NavUrls.HOME)
             }
         }
     }
